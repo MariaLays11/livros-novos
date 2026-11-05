@@ -1,0 +1,513 @@
+
+/* ========================================
+   LIVRARIA BEM-TE-VI
+   Identidade: preto, amarelo e creme
+======================================== */
+
+/* VARIÁVEIS DE CORES */
+
+:root {
+    --amarelo: #f5c518;
+    --amarelo-hover: #e0ad00;
+    --preto: #201e19;
+    --creme: #fff9e9;
+    --branco: #ffffff;
+    --marrom: #705638;
+    --texto: #353127;
+    --borda: #eee3c9;
+}
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--creme);
+    color: var(--texto);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--preto);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========================================
+   MENU SUPERIOR
+======================================== */
+
+.navbar {
+    background-color: var(--preto) !important;
+    padding: 18px 0;
+    border-bottom: 4px solid var(--amarelo);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    color: var(--amarelo) !important;
+    font-size: 1.35rem;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--branco) !important;
+}
+
+.navbar .btn-outline-light {
+    color: var(--amarelo);
+    border: 2px solid var(--amarelo);
+    border-radius: 25px;
+    padding: 9px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: var(--amarelo);
+    color: var(--preto);
+    border-color: var(--amarelo);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   BANNER PRINCIPAL
+======================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(245, 197, 24, 0.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #201e19 0%,
+            #3b3020 55%,
+            #705638 100%
+        );
+    color: var(--branco);
+    border-bottom: 7px solid var(--amarelo);
+}
+
+.hero h1 {
+    max-width: 900px;
+    margin: 0 auto 25px;
+    color: var(--amarelo);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #fff8e7;
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn-warning {
+    background-color: var(--amarelo);
+    border-color: var(--amarelo);
+    color: var(--preto);
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 13px 28px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: var(--amarelo-hover);
+    border-color: var(--amarelo-hover);
+    color: var(--preto);
+    transform: translateY(-3px);
+}
+
+.btn-success {
+    background-color: var(--preto);
+    border-color: var(--preto);
+    color: var(--amarelo);
+    border-radius: 25px;
+    padding: 11px 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: var(--amarelo);
+    border-color: var(--amarelo);
+    color: var(--preto);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--preto);
+    border-color: var(--preto);
+    color: var(--amarelo);
+    border-radius: 25px;
+}
+
+.btn-primary:hover {
+    background-color: var(--marrom);
+    border-color: var(--marrom);
+    color: var(--branco);
+}
+
+/* ========================================
+   CATÁLOGO
+======================================== */
+
+#catalogo {
+    padding-top: 70px !important;
+    padding-bottom: 80px !important;
+}
+
+#catalogo h2 {
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    margin-bottom: 12px;
+}
+
+#catalogo h2::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 4px;
+    margin: 15px auto 0;
+    background-color: var(--amarelo);
+    border-radius: 10px;
+}
+
+#catalogo .text-secondary {
+    color: #766c59 !important;
+}
+
+/* ========================================
+   CARDS DOS LIVROS
+======================================== */
+
+.livro-card {
+    overflow: hidden;
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.livro-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--amarelo);
+    box-shadow: 0 14px 30px rgba(48, 39, 20, 0.15) !important;
+}
+
+.livro-card .card-body {
+    padding: 24px;
+}
+
+.livro-card .card-title {
+    color: var(--preto);
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.livro-card .text-secondary {
+    font-size: 0.98rem;
+}
+
+.preco {
+    color: #7a5700;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   CAPAS DOS LIVROS
+======================================== */
+
+.capa {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #f8f1df;
+    border-bottom: 3px solid var(--amarelo);
+    transition: transform 0.4s ease;
+}
+
+.livro-card:hover .capa {
+    transform: scale(1.02);
+}
+
+.capa-placeholder {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(245, 197, 24, 0.22),
+            transparent 45%
+        ),
+        linear-gradient(145deg, #f8f1df, #e8d8b5);
+    border-bottom: 3px solid var(--amarelo);
+}
+
+.capa-placeholder span {
+    font-size: 5rem;
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.15));
+}
+
+.capa-placeholder p {
+    color: var(--preto);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ========================================
+   DISPONIBILIDADE
+======================================== */
+
+.livro-card .text-success {
+    color: #287344 !important;
+    font-weight: bold;
+}
+
+.livro-card .text-danger {
+    color: #b02a37 !important;
+    font-weight: bold;
+}
+
+/* ========================================
+   FORMULÁRIO DE CADASTRO
+======================================== */
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--preto);
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid #ded4bd;
+    border-radius: 10px;
+    padding: 12px 14px;
+    background-color: #fffdf7;
+    color: var(--texto);
+}
+
+.form-control:focus {
+    border-color: var(--amarelo-hover);
+    background-color: var(--branco);
+    box-shadow: 0 0 0 0.2rem rgba(245, 197, 24, 0.20);
+}
+
+/* ========================================
+   CAMPO DE FOTO DO LIVRO
+======================================== */
+
+.campo-imagem {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.campo-imagem .form-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--preto);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.input-imagem {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: 2px dashed var(--amarelo-hover);
+    border-radius: 12px;
+    background-color: #fffdf5;
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-imagem:hover {
+    border-color: var(--preto);
+    background-color: #fff7d6;
+}
+
+.input-imagem:focus-visible {
+    outline: 3px solid rgba(245, 197, 24, 0.45);
+    outline-offset: 3px;
+}
+
+/* Botão interno do campo de arquivo */
+
+.input-imagem::file-selector-button {
+    margin-right: 12px;
+    padding: 9px 15px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--amarelo);
+    color: var(--preto);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.input-imagem::file-selector-button:hover {
+    background-color: var(--amarelo-hover);
+}
+
+/* Texto de orientação */
+
+.texto-ajuda-imagem {
+    display: block;
+    margin-top: 8px;
+    color: var(--marrom);
+    font-size: 0.85rem;
+}
+
+/* Pré-visualização da foto escolhida */
+
+.preview-imagem {
+    display: none;
+    width: 180px;
+    height: 230px;
+    margin-top: 18px;
+    padding: 8px;
+    border: 2px solid var(--amarelo);
+    border-radius: 12px;
+    background-color: #f8f1df;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    background-color: var(--preto) !important;
+    color: #f7eed9 !important;
+    border-top: 5px solid var(--amarelo);
+    padding: 40px 20px !important;
+}
+
+footer h5 {
+    color: var(--amarelo);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #f7eed9;
+}
+
+footer small {
+    display: inline-block;
+    margin-top: 18px;
+    color: #c9bea8;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+
+    .navbar .btn-outline-light {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        padding: 70px 18px;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+    .capa,
+    .capa-placeholder {
+        height: 280px;
+    }
+
+    .livro-card .card-body {
+        padding: 20px;
+    }
+
+    .input-imagem {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .preview-imagem {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 380px) {
+    .navbar-brand {
+        font-size: 0.9rem;
+    }
+
+    .navbar .btn-outline-light {
+        font-size: 0.75rem;
+        padding: 6px 9px;
+    }
+
+    .hero {
+        padding: 55px 14px;
+    }
+}
